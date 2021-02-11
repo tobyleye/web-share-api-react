@@ -4,6 +4,7 @@ import styles from "./shareButton.module.css";
 export default function ShareButton({
   title,
   url = "",
+  text = "",
   fallback,
   className = "",
 }) {
@@ -13,6 +14,7 @@ export default function ShareButton({
       navigator.share({
         title,
         url,
+        text,
       });
     } else {
       console.warn(`oops it seems share api is not supported on your browser`);
