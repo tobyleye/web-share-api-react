@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styles from "./shareButton.module.css";
 
-export default function ShareButton({ title, url = "", fallback }) {
+export default function ShareButton({
+  title,
+  url = "",
+  fallback,
+  className = "",
+}) {
   const [showFallback, setShowFallback] = useState(false);
   const onClick = () => {
     if (navigator.share) {
@@ -24,12 +29,12 @@ export default function ShareButton({ title, url = "", fallback }) {
           title,
           url,
           isOpen: showFallback,
-          close: () => {
-            console.log("closing fallback");
-            setShowFallback(false);
-          },
+          close: () => setShowFallback(false),
         })}
-      <button onClick={onClick} className={styles.shareBtn}>
+      <button
+        onClick={onClick}
+        className={[className, styles.shareBtn].join(" ").trim()}
+      >
         Share
       </button>
     </>

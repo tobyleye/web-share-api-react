@@ -1,6 +1,6 @@
 import styles from "./shareModal.module.css";
 
-export default function ShareModal({ title, link, isOpen, onClose }) {
+export default function ShareModal({ title, url, isOpen, onClose }) {
   return (
     <section
       className={styles.shareModal + " " + (isOpen ? styles.active : "")}
@@ -11,7 +11,7 @@ export default function ShareModal({ title, link, isOpen, onClose }) {
           &times;
         </button>
         <p>{title}</p>
-        <a href={link}>Click here</a>
+        <a href={url}>Click here</a>
       </div>
     </section>
   );
