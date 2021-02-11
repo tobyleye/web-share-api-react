@@ -10,7 +10,8 @@ export default function ShareButton({ title, url = "", fallback }) {
         url,
       });
     } else {
-      console.warn(`oops it seems share api is not available on your browswer`);
+      console.warn(`oops it seems share api is not supported on your browser`);
+      console.warn(`Consider leaving the planet. Haha! just kidding`);
       setShowFallback(true);
     }
   };
